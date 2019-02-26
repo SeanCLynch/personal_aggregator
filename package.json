@@ -4,6 +4,10 @@
   "description": "Personal Website",
   "main": "index.js",
   "scripts": {
+    "fetch": "node index.js fetch",
+    "build": "node index.js build",
+    "copy": "cp -a ./dest/. /var/www/aggregator/public_html/",
+    "deploy": "npm run fetch && npm run build && npm run copy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sean",

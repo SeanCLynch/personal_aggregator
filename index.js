@@ -26,16 +26,12 @@ function archiveData() {
 	});
 }
 
-
-(async () => {
-	let arr = [];
-
-  /*
+async function fetchData() {
 	let a = await github.fetch();
 	let b = await pinboard.fetch();
 	let c = await blog.fetch();
-
-	arr = arr.concat(a, b, c);
+	let arr = [];
+  arr = arr.concat(a, b, c);
 	
 	arr.sort((a, b) => {
 		return moment.utc(b.datetime).diff(moment.utc(a.datetime));
@@ -45,11 +41,27 @@ function archiveData() {
 
 	let data = { 'items': arr };
 	saveData(data);
-  */
+}
 
+async function buildSite() {
   let data = JSON.parse(fs.readFileSync('./src/data.json', 'utf-8'));
   let template = fs.readFileSync('./src/index.hbs', 'utf-8');
   let compiled = handlebars.compile(template);
   let html = compiled(data);
   fs.writeFileSync('./dest/index.html', html);
-})();
+}
+
+let args = process.argv.slice(2);
+switch (args[0]) {
+  case 'fetch':
+    fetchData();
+    console.log("Fetching data...");
+    break;
+  case 'build':
+    buildSite();
+    console.log("Building site...");
+    break;
+  default: 
+    console.log("No cmd found...");
+    break;
+}
