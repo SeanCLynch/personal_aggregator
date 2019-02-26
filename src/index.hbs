@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Sean's Pub</title>
+    <style>
+      body {
+        background-image: url('./static/imgs/topography.png');
+        background-repeat: repeat;
+        background-color: rgba(184,134,11,.25);
+        background-blend-mode: multiply;
+        font-family: Open Sans, sans-serif;
+        line-height: 1.3;
+        color: #454545;
+      }
+
+      em {
+        font-size: x-small;
+      }
+
+      .item {
+        margin-top: 0.5em;
+        padding-bottom: 0.5em;
+        border-bottom: 1px dashed;
+      }
+
+      .right {
+        text-align: right;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 1em;
+        background-color: #fefefe;
+      }
+
+      @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+        .container {
+          max-width: unset;
+        }
+        .menu {
+          text-align: center;
+        }
+      }
+
+      #onTap {
+        margin: 0 auto;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        const tap_btn = document.getElementsByClassName('toggleTap')[0];
+        tap_btn.onclick = function () {
+          let tap = document.getElementsByClassName('tap')[0];
+          tap.style.display = tap.style.display === 'none' ? '' : 'none';
+        }
+      }
+    </script>
+  </head>
+  <body>
+  <div class="container">
+    <h1>Sean's Pub</h1>
+    <div>The digital watering hole of Sean, the technologist from Philly.</div>
+    <div>Below you can find out more about me and what I've been up to lately.</div>
+    <hr />
+    <div class="menu">
+      <em>seans.pub</em>
+      <a href="#"><b>/</b>about</a>
+      <a href="#"><b>/</b>opendoor</a>
+    </div>
+    <hr />
+    <div class="menu" >
+      <a href="https://blog.seans.pub/">blog<b>.</b></a>
+      <a href="https://projects.seans.pub/">projects<b>.</b></a>
+      <em>seans.pub</em>
+    </div>
+    <hr />
+    <div class="menu">
+      <button class="toggleTap">What's On Tap?</button>
+    </div>
+    <hr />
+    <div class="tap" style="display: none;">
+      {{#each items}}
+        <div class="item">
+          <a href="{{url}}">{{title}}</a><br>
+          {{#if comment}}{{comment}}<br>{{/if}}
+          <em>On {{source}} at {{datetime}}.</em>
+        </div>
+      {{/each}}
+    </div>
+    <div class="menu"><em><a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. Made by Sean. <a href="#">source</a>.</em></div>
+  </div>
+  </body>
+</html>
