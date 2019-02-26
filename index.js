@@ -26,6 +26,7 @@ function archiveData() {
 	});
 }
 
+// Fetches data from sources and compiles it. 
 async function fetchData() {
 	let a = await github.fetch();
 	let b = await pinboard.fetch();
@@ -43,6 +44,7 @@ async function fetchData() {
 	saveData(data);
 }
 
+// Builds the site using most recent data and handlebars. 
 async function buildSite() {
   let data = JSON.parse(fs.readFileSync('./src/data.json', 'utf-8'));
   let template = fs.readFileSync('./src/index.hbs', 'utf-8');
