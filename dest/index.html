@@ -1,284 +1,236 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Sean's Pub</title>
-    <style>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sean's Pub</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <link href="css/style.css" rel="stylesheet" media="all">
+  <style>
+    html, body {
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      color: #555;
+      margin: 0 auto;
+      max-width: 50em;
+      line-height: 1.5em;
+    }
+
+    h1, h2, strong {
+      color: #333;
+    }
+
+    a {
+      color: #8BBA94;
+    }
+
+    header div {
+      margin-top: 4px;
+    }
+
+    .item {
+      font-size: small;
+    }
+
+    .comment {
+      font-size: small;
+      margin-left: 2em;
+    }
+
+    @media (max-width: 480px) {
       body {
-        background-image: url('./static/imgs/topography.png');
-        background-repeat: repeat;
-        background-color: rgba(184,134,11,.25);
-        background-blend-mode: multiply;
-        font-family: Open Sans, sans-serif;
-        line-height: 1.3;
-        color: #454545;
+        padding: 2em;
       }
+    }
+  </style>
+</head>
+<body>
 
-      em {
-        font-size: x-small;
-      }
-
-      .item {
-        margin-top: 0.5em;
-        padding-bottom: 0.5em;
-        border-bottom: 1px dashed;
-      }
-
-      .right {
-        text-align: right;
-      }
-
-      .container {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 1em;
-        background-color: #fefefe;
-      }
-
-      @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-        .container {
-          max-width: unset;
-        }
-        .menu {
-          text-align: center;
-        }
-      }
-
-      #onTap {
-        margin: 0 auto;
-      }
-    </style>
-    <script>
-      window.onload = function () {
-        const tap_btn = document.getElementsByClassName('toggleTap')[0];
-        tap_btn.onclick = function () {
-          let tap = document.getElementsByClassName('tap')[0];
-          tap.style.display = tap.style.display === 'none' ? '' : 'none';
-        }
-      }
-    </script>
-  </head>
-  <body>
-  <div class="container">
-    <h1>Sean's Pub</h1>
-    <div>The digital watering hole of Sean, the technologist from Philly.</div>
-    <div>Below you can find out more about me and what I've been up to lately.</div>
-    <hr />
-    <div class="menu">
-      <em>seans.pub</em>
-      <a href="#"><b>/</b>about</a>
-      <a href="#"><b>/</b>opendoor</a>
+  <header>
+    <h1>Sean's . Pub</h1>
+    <nav>
+      This Site: 
+      <a href="/">Home</a>
+      | 
+      <a href="#activity">Activity</a>  
+      | 
+      <a href="#projects">Projects</a>
+      | 
+      <a href="#contact">Contact</a>
+    </nav>
+    <div>
+      Other Sites: 
+      <a href="https://pinboard.in/u:seanclynch/">Pinboard</a>
+      | 
+      <a href="http://github.com/seanclynch">Github</a>
+      | 
+      <a href="https://www.linkedin.com/in/sean-lynch-45898688">Linkedin</a>  
+      | 
+      <a href="https://twitter.com/greenitalics">Twitter</a>
     </div>
-    <hr />
-    <div class="menu" >
-      <a href="https://blog.seans.pub/">blog<b>.</b></a>
-      <a href="https://projects.seans.pub/">projects<b>.</b></a>
-      <em>seans.pub</em>
+    <div>
+      Selfhosted:
+      <a href="https://blog.seans.pub/">Blog</a>
+      |  
+      <a href="https://cloud.seans.pub/">Cloud</a>
+      | 
+      <a href="https://wiki.seans.pub/">Wiki</a>
     </div>
-    <hr />
-    <div class="menu">
-      <button class="toggleTap">What's On Tap?</button>
-    </div>
-    <hr />
-    <div class="tap" style="display: none;">
-        <div class="item">
-          <a href="https://api.github.com/repos/tootsuite/mastodon">Now watching: tootsuite/mastodon</a><br>
-          
-          <em>On github at 2019-02-21T16:48:23Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://api.github.com/repos/aviaviavi/toodles">Now watching: aviaviavi/toodles</a><br>
-          
-          <em>On github at 2019-02-21T16:48:10Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://api.github.com/repos/jmcvetta/cspace">Now watching: jmcvetta/cspace</a><br>
-          
-          <em>On github at 2019-02-21T16:47:16Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://api.github.com/repos/MaxBittker/sandspiel">Now watching: MaxBittker/sandspiel</a><br>
-          
-          <em>On github at 2019-02-21T16:47:00Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://api.github.com/repos/rastapasta/mapscii">Now watching: rastapasta/mapscii</a><br>
-          
-          <em>On github at 2019-02-21T16:46:45Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://api.github.com/repos/consul/consul">Now watching: consul/consul</a><br>
-          
-          <em>On github at 2019-02-21T16:46:30Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://api.github.com/repos/sveinbjornt/Sloth">Now watching: sveinbjornt/Sloth</a><br>
-          
-          <em>On github at 2019-02-21T16:46:14Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://github.com/sveinbjornt/Sloth">sveinbjornt/Sloth: Nice GUI for lsof</a><br>
-          Nice open source app for viewing open files and processes on mac. Fun to play around with and see some internals. <br>
-          <em>On pinboard at 2019-02-21T15:50:42Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://www.redblobgames.com/grids/hexagons/">Hexagonal Grids</a><br>
-          Awesome, in-depth blog post on working with hexagonal grid systems.<br>
-          <em>On pinboard at 2019-02-21T15:46:19Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://github.com/minimaxir/hacker-news-undocumented/blob/master/README.md">Hacker News Undocumented Features | minimaxir</a><br>
-          List of hidden features of hackernews. Interesting idea to not have the rules explicitly published anywhere - seems to have worked so far...<br>
-          <em>On pinboard at 2019-02-21T15:44:16Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://playbook.samaltman.com/">Startup Playbook</a><br>
-          Great source of distilled insight from ycombinator. Might be a good model for the civic hacking playbook?<br>
-          <em>On pinboard at 2019-02-21T15:42:48Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://api.github.com/repos/SeanCLynch/lobsters">Pushed to: SeanCLynch/lobsters</a><br>
-          
-          <em>On github at 2019-02-19T19:49:27Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://makingmaps.net/2019/01/17/boris-artzybasheffs-maps/">Boris Artzybasheff’s Maps: DIY Cartography | Making Maps</a><br>
-          
-          <em>On pinboard at 2019-02-11T20:47:50Z.</em>
-        </div>
-        <div class="item">
-          <a href="http://linuxgizmos.com/linux-maker-boards-learn-how-to-specialize/">Linux maker boards learn how to specialize</a><br>
-          
-          <em>On pinboard at 2019-02-11T20:38:31Z.</em>
-        </div>
-        <div class="item">
-          <a href="http://polygraph.cool/kickstarter/">The Entire History of Kickstarter Projects, Broken Down by City</a><br>
-          Great geographic breakdown of kickstarter projects, huge treasure trove of links to explore here. <br>
-          <em>On pinboard at 2019-02-11T20:30:27Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://blog.benjojo.co.uk/post/eve-online-bgp-internet">What would a EvE online Internet look like?</a><br>
-          
-          <em>On pinboard at 2019-02-06T22:01:06Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://www.lesswrong.com/posts/vHSrtmr3EBohcw6t8/norms-of-membership-for-voluntary-groups">Norms of Membership for Voluntary Groups - LessWrong 2.0</a><br>
-          
-          <em>On pinboard at 2019-02-05T18:55:11Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://glitch.com/about/">About Glitch</a><br>
-          
-          <em>On pinboard at 2019-02-05T18:31:12Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://wiby.me/">wiby.me - the search engine for classic websites</a><br>
-          
-          <em>On pinboard at 2019-02-05T18:26:41Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://news.ycombinator.com/item?id&#x3D;19038327">Why isn&#x27;t the internet more fun and weird? | Hacker News</a><br>
-          
-          <em>On pinboard at 2019-02-05T18:11:00Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://theuselessweb.com/">The Useless Web</a><br>
-          
-          <em>On pinboard at 2019-02-05T18:10:01Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://lainchan.org/">LAINCHAN</a><br>
-          
-          <em>On pinboard at 2019-02-05T17:55:34Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://2f30.org/home.html">division by zero</a><br>
-          
-          <em>On pinboard at 2019-02-05T17:51:22Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://www.pouet.net/">pouët.net :: your online demoscene resource</a><br>
-          
-          <em>On pinboard at 2019-02-05T17:49:49Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://api.github.com/repos/SeanCLynch/checklisting">Pushed to: SeanCLynch/checklisting</a><br>
-          
-          <em>On github at 2019-01-31T15:45:25Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://api.github.com/repos/SeanCLynch/checklisting">Pushed to: SeanCLynch/checklisting</a><br>
-          
-          <em>On github at 2019-01-31T15:21:35Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://api.github.com/repos/SeanCLynch/checklisting">Pushed to: SeanCLynch/checklisting</a><br>
-          
-          <em>On github at 2019-01-31T14:54:13Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://api.github.com/repos/SeanCLynch/checklisting">Pushed to: SeanCLynch/checklisting</a><br>
-          
-          <em>On github at 2019-01-30T17:50:10Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://api.github.com/repos/SeanCLynch/checklisting">Pushed to: SeanCLynch/checklisting</a><br>
-          
-          <em>On github at 2019-01-30T16:44:32Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://api.github.com/repos/SeanCLynch/checklisting">Pushed to: SeanCLynch/checklisting</a><br>
-          
-          <em>On github at 2019-01-29T21:56:59Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://api.github.com/repos/SeanCLynch/checklisting">Pushed to: SeanCLynch/checklisting</a><br>
-          
-          <em>On github at 2018-12-19T01:00:13Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://api.github.com/repos/SeanCLynch/checklisting">Pushed to: SeanCLynch/checklisting</a><br>
-          
-          <em>On github at 2018-12-12T00:52:24Z.</em>
-        </div>
-        <div class="item">
-          <a href="http://blog.seans.pub/imzy-closing/">Imzy Closing</a><br>
-          Some quick thoughts on the closing of Imzy.<br>
-          <em>On blog at 2018-12-11T15:19:43.000Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://api.github.com/repos/SeanCLynch/checklisting">Pushed to: SeanCLynch/checklisting</a><br>
-          
-          <em>On github at 2018-12-11T03:24:15Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://api.github.com/repos/SeanCLynch/checklisting">Pushed to: SeanCLynch/checklisting</a><br>
-          
-          <em>On github at 2018-12-04T05:54:02Z.</em>
-        </div>
-        <div class="item">
-          <a href="https://api.github.com/repos/SeanCLynch/checklisting">Pushed to: SeanCLynch/checklisting</a><br>
-          
-          <em>On github at 2018-12-04T03:20:13Z.</em>
-        </div>
-        <div class="item">
-          <a href="http://blog.seans.pub/checklisting-for-technical-fields/">Checklisting.Club</a><br>
-          Checklist Club is the first of a series of projects and has already yielded some interesting lessons, come hear the story...<br>
-          <em>On blog at 2018-11-12T21:36:14.000Z.</em>
-        </div>
-        <div class="item">
-          <a href="http://blog.seans.pub/whistling-ice-skating-and-doing-everything/">Whistling, Ice Skating and Doing Everything</a><br>
-          
-          <em>On blog at 2018-03-22T03:34:26.000Z.</em>
-        </div>
-        <div class="item">
-          <a href="http://blog.seans.pub/tilde-communities/">Tilde Communities</a><br>
-          This is an excerpt for my first post. <br>
-          <em>On blog at 2018-03-12T14:53:20.000Z.</em>
-        </div>
-    </div>
-    <div class="menu"><em><a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. Made by Sean. <a href="#">source</a>.</em></div>
-  </div>
-  </body>
+  </header>
+
+  <section id="intro">
+    <h3>Hey! Welcome!</h3>
+    <p>Sean is a software developer and <abbr title="one who builds and studies novel digital communities">technographer</abbr> from Philly. He specializes in building web applications and evaluating digital communities. For fun he plays many different types of games and likes to be outside with friends. This website is his home on the web, where he serves up great links and aggregates his digital life.</p>
+  </section>
+
+  <section id="activity">
+    <h3>Recent Activity</h3>
+      <div class="item">
+        <span class="type">(pinboard - </span>
+        <span class="date"> Aug 05 2019) - </span>
+        <span class="link"><a href="https://punpedia.org/">Punpedia</a></span>
+      </div>
+        <span class="comment">The Online Encyclopedia of Puns</span>
+      <div class="item">
+        <span class="type">(pinboard - </span>
+        <span class="date"> Jul 31 2019) - </span>
+        <span class="link"><a href="https://ncase.me/fireflies/">Fireflies</a></span>
+      </div>
+      <div class="item">
+        <span class="type">(pinboard - </span>
+        <span class="date"> Jul 25 2019) - </span>
+        <span class="link"><a href="https://github.com/BTMorton/dnd-5e-srd">DND 5e SRD</a></span>
+      </div>
+        <span class="comment">The 5th edition of the Systems Reference Document for DnD. Available in JSON and other formats!</span>
+      <div class="item">
+        <span class="type">(pinboard - </span>
+        <span class="date"> Jul 25 2019) - </span>
+        <span class="link"><a href="https://danluu.com/postmortem-lessons/">Reading postmortems</a></span>
+      </div>
+        <span class="comment">Check out the link to danluu&#x27;s collection of postmortems - great reading there!</span>
+      <div class="item">
+        <span class="type">(pinboard - </span>
+        <span class="date"> Jul 25 2019) - </span>
+        <span class="link"><a href="https://tildeverse.org/">tildeverse</a></span>
+      </div>
+      <div class="item">
+        <span class="type">(pinboard - </span>
+        <span class="date"> Jul 22 2019) - </span>
+        <span class="link"><a href="https://blog.danslimmon.com/2019/07/15/do-nothing-scripting-the-key-to-gradual-automation/">Do-nothing scripting: the key to gradual automation | Dan Slimmon</a></span>
+      </div>
+      <div class="item">
+        <span class="type">(pinboard - </span>
+        <span class="date"> Jul 10 2019) - </span>
+        <span class="link"><a href="https://cornergarage.coop/">Corner Garage Co-op</a></span>
+      </div>
+        <span class="comment">Cool, inspiring project for a co-op + mechanics bay. </span>
+      <div class="item">
+        <span class="type">(pinboard - </span>
+        <span class="date"> Jul 10 2019) - </span>
+        <span class="link"><a href="http://hackthe.company/">Hack the Company</a></span>
+      </div>
+        <span class="comment">CTF challenges based on real historical hacks. </span>
+      <div class="item">
+        <span class="type">(pinboard - </span>
+        <span class="date"> Jul 10 2019) - </span>
+        <span class="link"><a href="https://docoh.com/">Docoh - Company research &amp; investment</a></span>
+      </div>
+      <div class="item">
+        <span class="type">(pinboard - </span>
+        <span class="date"> Jul 10 2019) - </span>
+        <span class="link"><a href="https://wiki.xxiivv.com/#home">XXIIVV — Home</a></span>
+      </div>
+      <div class="item">
+        <span class="type">(pinboard - </span>
+        <span class="date"> Jul 03 2019) - </span>
+        <span class="link"><a href="https://bitwarden.com/">Bitwarden: Password Management</a></span>
+      </div>
+        <span class="comment">Free, open source password management solutions. Used at Code for Philly.</span>
+      <div class="item">
+        <span class="type">(pinboard - </span>
+        <span class="date"> Jul 03 2019) - </span>
+        <span class="link"><a href="https://bulma.io/">Bulma: CSS framework</a></span>
+      </div>
+      <div class="item">
+        <span class="type">(pinboard - </span>
+        <span class="date"> Jun 26 2019) - </span>
+        <span class="link"><a href="https://placekitten.com/">{placekitten} - Placeholder kitten images for developers</a></span>
+      </div>
+      <div class="item">
+        <span class="type">(pinboard - </span>
+        <span class="date"> Jun 12 2019) - </span>
+        <span class="link"><a href="https://ourway.keybase.pub/mathematics_cheat_sheet.pdf">MATH CHEAT SHEET #8</a></span>
+      </div>
+        <span class="comment">An excellent compilation of math concepts. </span>
+      <div class="item">
+        <span class="type">(pinboard - </span>
+        <span class="date"> Jun 12 2019) - </span>
+        <span class="link"><a href="https://i.imgur.com/uicVRpb.png">Annotated history of Hackernews</a></span>
+      </div>
+      <div class="item">
+        <span class="type">(pinboard - </span>
+        <span class="date"> Jun 12 2019) - </span>
+        <span class="link"><a href="https://hbr.org/2019/01/why-some-platforms-thrive-and-others-dont">Why Some Platforms Thrive and Others Don’t</a></span>
+      </div>
+        <span class="comment">Great explanation of technical network properties and their latent effects on the community. </span>
+      <div class="item">
+        <span class="type">(blog - </span>
+        <span class="date"> Jun 11 2019) - </span>
+        <span class="link"><a href="http://blog.seans.pub/the-premise-of-civic-decentralization/">The Premise of Technography</a></span>
+      </div>
+      <div class="item">
+        <span class="type">(blog - </span>
+        <span class="date"> Mar 11 2019) - </span>
+        <span class="link"><a href="http://blog.seans.pub/clay-shirky-on-building-social-software/">Clay Shirky on building social software</a></span>
+      </div>
+      <div class="item">
+        <span class="type">(blog - </span>
+        <span class="date"> Dec 11 2018) - </span>
+        <span class="link"><a href="http://blog.seans.pub/imzy-closing/">Imzy Closing</a></span>
+      </div>
+        <span class="comment">Some quick thoughts on the closing of Imzy.</span>
+      <div class="item">
+        <span class="type">(blog - </span>
+        <span class="date"> Nov 29 2018) - </span>
+        <span class="link"><a href="http://blog.seans.pub/modern-witchcraft/">Modern Witchcraft</a></span>
+      </div>
+      <div class="item">
+        <span class="type">(blog - </span>
+        <span class="date"> Nov 22 2018) - </span>
+        <span class="link"><a href="http://blog.seans.pub/consuming-not-creating/">Consuming, not Creating</a></span>
+      </div>
+  </section>
+
+  <!-- <section id="writing">
+    <h3>Writing from <a href="https://blog.seans.pub/">The Technographer</a></h3>
+    11 Mar 2019 - <a href="#">Clay Shirky on Building Social Software</a><br>
+    11 Dec 2018 - <a href="#">Imzy Closing</a><br>
+    12 Nov 2018 - <a href="#">Checklisting.Club</a><br>
+    12 Mar 2018 - <a href="#">Tilde Communities</a><br>
+    2 Feb 2015 - <a href="#">Whistling, Ice Skating and Doing Everything</a><br>
+    5 Nov 2013 - <a href="#">Consuming, Creating</a><br>
+    24 Oct 2013 - <a href="#">Modern Witchcraft</a><br>
+  </section> -->
+
+  <section id="projects">
+    <h3>Projects</h3>
+    <a href="https://blog.seans.pub/">The Technographer</a> - My blog.<br>
+    <a href="https://checklisting.club/">Checklisting.Club</a> - Collaborative preparedness SaaS.<br>
+    <a href="https://the.vfanews.club/">The VFA News Club</a> - Clone of lobste.rs for VFA.<br>
+    <a href="https://github.com/CodeForPhilly/laddr-python">Laddr-Python</a> - Beginner-friendly clone of laddr.<br>
+    <a href="http://pennappsfellows.com/">PennApps Fellows</a> - Summer internship program in Philly.<br>
+    <a href="http://devpost.com/software/pillpal-n2kxgo">PillPal</a> - Pill dispenser, 3rd place at PennApps XIII.<br>
+    <a href="https://github.com/SeanCLynch/better_swipe_access">Better Swipe Access</a> - A card swipe access system for machine shops.<br>
+    <a href="http://greenitalics.deviantart.com/">Cartography</a> - My own drawings and maps.<br>
+    <a href="https://www.dropbox.com/s/c6kbas5n8l2roq2/Sean%20Lynch%20Senior%20Thesis%20Draft.pdf?dl=0">Senior Thesis</a> - On detecting novel communities.<br>
+    <a href="https://www.dpvcc.org/">DVPCC</a> - Private community for cancer researchers.<br>
+    <!-- TEMPLATE <a href="#">Laddr</a><br> -->
+  </section>
+
+  <section id="contact">
+    <h3>Contact Me</h3>
+    <p>Still working out a good way of doing this.</p>
+  </section>
+
+</body>
 </html>
+

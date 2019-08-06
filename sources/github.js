@@ -12,9 +12,19 @@ module.exports.fetch = async () => {
 		let formatted_items = [];
 		resp.data.forEach((event) => {
 
-			if (event.type === "WatchEvent") {
+      if (event.type === "StarEvent") {
+        formatted_items.push({
+          url: "https://github.com/" + event.repo.name,
+          title: "Starred: " + event.repo.name,
+          comment: '',
+          tags: [],
+          datetime: event.created_at,
+          source: 'github'
+        });
+
+      } else if (event.type === "WatchEvent") {
 				formatted_items.push({
-					url: event.repo.url,
+          url: "https://github.com/" + event.repo.name,
 					title: "Now watching: " + event.repo.name,
 					comment: '',
 					tags: [],
@@ -22,7 +32,7 @@ module.exports.fetch = async () => {
 					source: 'github'
 				});
 
-			} else if (event.type === "PushEvent") {
+			/* } else if (event.type === "PushEvent") {
 				let has_commit = typeof event.commits != 'undefined';
 				let comment = (has_commit) ? event.commits[0].message : "";
 				formatted_items.push({
@@ -32,7 +42,7 @@ module.exports.fetch = async () => {
 					datetime: event.created_at,
 					source: 'github'
 				});
-
+      */
 			} else {
 				// Event type not supported.
 				return;

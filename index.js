@@ -4,6 +4,11 @@ let moment = require('moment');
 let fs = require('fs');
 let handlebars = require('handlebars');
 
+handlebars.registerHelper('nicedate', function (datetime) {
+  let dt = new Date(datetime);
+  return dt.toDateString().slice(3);
+});
+
 // Aggregator Sources
 let github = require('./sources/github');
 let pinboard = require('./sources/pinboard');

@@ -12,7 +12,9 @@ module.exports.fetch = async () => {
 		});
 
 		// Fetch data.
-		let url = 'http://blog.seans.pub/ghost/api/v0.1/' + ghost.url.api('posts', {limit: 5, include: 'tags'});
+		let url = 'http://blog.seans.pub/ghost/api/v0.1/' + ghost.url.api('posts', {
+      limit: 5, 
+      include: 'tags'});
 		let resp = await axios.get(url);
 		assert.equal(resp.status, 200, "Error fetching blog data.");	
 
