@@ -6,7 +6,7 @@ let handlebars = require('handlebars');
 
 handlebars.registerHelper('nicedate', function (datetime) {
   let dt = new Date(datetime);
-  return dt.toDateString().slice(3);
+  return dt.toDateString().slice(4);
 });
 
 // Aggregator Sources

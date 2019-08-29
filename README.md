@@ -15,4 +15,6 @@ Use `npm run copy`  to deploy files to the correct location for apache.
 Tada! Site deployed.
 
 # TODOs
-* 
+* Re-implement Github push/pull request events.
+* Add contact & office hours links.
+* Add icon or symbol or something.
