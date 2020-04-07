@@ -29,6 +29,16 @@
 
     .item {
       font-size: small;
+      margin-bottom: 0.6em;
+      padding-left: 4px;
+    }
+    .item:nth-child(odd) {
+      background-color: #f0f0f0;
+    }
+    .item a {
+      font-weight: bold;
+      font-size: 15px;
+      text-decoration-line: none;
     }
 
     .comment {
@@ -41,155 +51,139 @@
         padding: 2em;
       }
     }
+
+    table {
+      width: 100%;
+      text-align: center;
+    }
+    th, td {
+      padding-left: 4px;
+      padding-right: 4px;
+      padding-top: 4px;
+    }
   </style>
 </head>
 <body>
 
   <header>
     <h1>Sean's . Pub</h1>
-    <nav> <!-- This Site -->
-      <a href="/">Home</a>
-      | 
-      <a href="#activity">Activity</a>  
-      | 
-      <a href="#projects">Projects</a>
-      | 
-      <a href="#contact">Contact</a>
-    </nav>
-    <div> <!-- Other Sites --> 
-      <a href="https://pinboard.in/u:seanclynch/">Pinboard</a>
-      | 
-      <a href="http://github.com/seanclynch">Github</a>
-      | 
-      <a href="https://www.linkedin.com/in/sean-lynch-45898688">Linkedin</a>  
-      | 
-      <a href="https://twitter.com/greenitalics">Twitter</a>
-    </div>
-    <div> <!-- Selfhosted Sites -->
-      <a href="https://blog.seans.pub/">Blog</a>
-      |  
-      <a href="https://cloud.seans.pub/">Cloud</a>
-      | 
-      <a href="https://wiki.seans.pub/">Wiki</a>
-    </div>
+    <table>
+      <tr>
+        <th>This Site</th>
+        <th>My Sites</th>
+        <th>Other Sites</th>
+      </tr>
+      <tr>
+        <td><a href="/">Home</a></td>
+        <td><a href="https://blog.seans.pub/">Blog</a></td>
+        <td><a href="https://pinboard.in/u:seanclynch/">Pinboard</a></td>
+      </tr>
+      <tr>
+        <td><a href="#activity">Activity</a></td>
+        <td><a href="https://cloud.seans.pub/">Cloud</a></td>
+        <td><a href="http://github.com/seanclynch">Github</a></td>
+      </tr>
+      <tr>
+        <td><a href="#projects">Projects</a></td>
+        <td><a href="https://wiki.seans.pub/">Wiki</a></td>
+        <td><a href="https://www.linkedin.com/in/sean-lynch-45898688">Linkedin</a></td>
+      </tr>
+      <tr>
+        <td><a href="#contact">Contact</a></td>
+        <td>
+        <td><a href="https://twitter.com/greenitalics">Twitter</a></td>
+      </tr>
+    </table>
   </header>
+
+  <section id="activity">
+    <h3>Recent Activity</h3>
+      <div class="item">
+        <span class="link"><a href="https://remarkable.com/">reMarkable</a></span>
+        <span class="date">on pinboard Apr 06 2020</span>
+        <div class="comment">Always on the hunt for new gadgets, this caught my eye.</div>
+      </div>
+      <div class="item">
+        <span class="link"><a href="http://blog.seans.pub/siege-mansion/">Dwarf Fortress: Siegemansion</a></span>
+        <span class="date">on blog Apr 02 2020</span>
+        <div class="comment">Experimental post about my latest adventures in Dwarf Fortress.</div>
+      </div>
+      <div class="item">
+        <span class="link"><a href="https://eyeondesign.aiga.org/for-decades-cartographers-have-been-hiding-covert-illustrations-inside-of-switzerlands-official-maps/">Covert Illustrations Inside of Switzerland&#x27;s Official Maps</a></span>
+        <span class="date">on pinboard Mar 05 2020</span>
+      </div>
+      <div class="item">
+        <span class="link"><a href="https://pudding.cool/2019/10/laugh/">Laughing OnLine</a></span>
+        <span class="date">on pinboard Feb 26 2020</span>
+      </div>
+      <div class="item">
+        <span class="link"><a href="https://explorabl.es/">Explorable Explanations</a></span>
+        <span class="date">on pinboard Feb 20 2020</span>
+        <div class="comment">Upstanding examples of using play to learn.</div>
+      </div>
+      <div class="item">
+        <span class="link"><a href="https://poolside.fm/">Poolside FM</a></span>
+        <span class="date">on pinboard Feb 20 2020</span>
+        <div class="comment">Another A E S T H E T I C vaporwave-y site with great vibes and that home-cooked, human feeling.</div>
+      </div>
+      <div class="item">
+        <span class="link"><a href="https://news.ycombinator.com/item?id&#x3D;22289706">All about Birds | Hacker News</a></span>
+        <span class="date">on pinboard Feb 12 2020</span>
+        <div class="comment">Lots of great links about birding and the bird-watching community.</div>
+      </div>
+      <div class="item">
+        <span class="link"><a href="https://www.npr.org/2017/01/13/509358157/is-there-a-limit-to-how-many-friends-we-can-have">Robin Dunbar - NPR</a></span>
+        <span class="date">on pinboard Jan 29 2020</span>
+        <div class="comment">Pleasant overview of Dunbar&#x27;s Number from the horse&#x27;s mouth. Has some additional interesting statistics as well.</div>
+      </div>
+      <div class="item">
+        <span class="link"><a href="https://cheapskatesguide.org/articles/forum-list.html">A Curated List of Online Forums</a></span>
+        <span class="date">on pinboard Jan 22 2020</span>
+      </div>
+      <div class="item">
+        <span class="link"><a href="http://www.tenyearsago.io/">Ten Years Ago</a></span>
+        <span class="date">on pinboard Jan 22 2020</span>
+        <div class="comment">Limited set of fun links to what the web looked like 10 years ago, really fun and reflective.</div>
+      </div>
+      <div class="item">
+        <span class="link"><a href="https://jenngineering.glitch.me/your-first-communities/">your first communities - jenngineering</a></span>
+        <span class="date">on pinboard Jan 15 2020</span>
+        <div class="comment">Nostalgic and thoughtful post on folk&#x27;s first communities and what happened to them. </div>
+      </div>
+      <div class="item">
+        <span class="link"><a href="https://www.polygon.com/2020/1/7/21043182/neon-genesis-evangelion-netflix-anime-meaning-bible-depression-sexuality">Neon Genesis Evangelion in 2020 - Polygon</a></span>
+        <span class="date">on pinboard Jan 15 2020</span>
+        <div class="comment">Deeply thought out review of an awesome, complex show.</div>
+      </div>
+      <div class="item">
+        <span class="link"><a href="https://fullcalendar.io/">FullCalendar - JavaScript Event Calendar</a></span>
+        <span class="date">on pinboard Jan 13 2020</span>
+        <div class="comment">Potentially useful library for integrating a calendar into your app. </div>
+      </div>
+      <div class="item">
+        <span class="link"><a href="http://blog.seans.pub/aspects-of-main-street/">Aspects of Main Street</a></span>
+        <span class="date">on blog Aug 14 2019</span>
+        <div class="comment">A short series of observations about the local main street.</div>
+      </div>
+      <div class="item">
+        <span class="link"><a href="http://blog.seans.pub/the-premise-of-civic-decentralization/">The Premise of Technography</a></span>
+        <span class="date">on blog Jun 11 2019</span>
+      </div>
+      <div class="item">
+        <span class="link"><a href="http://blog.seans.pub/clay-shirky-on-building-social-software/">Clay Shirky on building social software</a></span>
+        <span class="date">on blog Mar 11 2019</span>
+      </div>
+      <div class="item">
+        <span class="link"><a href="http://blog.seans.pub/imzy-closing/">Imzy Closing</a></span>
+        <span class="date">on blog Dec 11 2018</span>
+        <div class="comment">Some quick thoughts on the closing of Imzy.</div>
+      </div>
+  </section>
 
   <section id="intro">
     <h3>Hey! Welcome!</h3>
     <p>Sean is a software developer and <abbr title="one who builds and studies novel digital communities">technographer</abbr> from Philly. He specializes in building web applications and evaluating digital communities. For fun he plays many different types of games and likes to be outside with friends. This website is his home on the web, where he serves up great links and aggregates his digital life.</p>
   </section>
-
-  <section id="activity">
-    <h3>Recent Activity</h3>
-      <div class="item">
-        <!-- <span class="type">(pinboard - </span> -->
-        <span class="date">(Aug 28 2019) - </span>
-        <span class="link"><a href="https://treeverse.app/">Treeverse</a></span>
-      </div>
-        <span class="comment">Alternative comment structures for Twitter convos.</span>
-      <div class="item">
-        <!-- <span class="type">(pinboard - </span> -->
-        <span class="date">(Aug 28 2019) - </span>
-        <span class="link"><a href="https://www.landfall.co.uk/">Landfall Artwork</a></span>
-      </div>
-      <div class="item">
-        <!-- <span class="type">(pinboard - </span> -->
-        <span class="date">(Aug 28 2019) - </span>
-        <span class="link"><a href="http://music.ishkur.com/">Ishkur&#x27;s Guide to Electronic Music</a></span>
-      </div>
-      <div class="item">
-        <!-- <span class="type">(pinboard - </span> -->
-        <span class="date">(Aug 26 2019) - </span>
-        <span class="link"><a href="http://everynoise.com/">Every Noise at Once</a></span>
-      </div>
-        <span class="comment">Beautiful graphic of music genres.</span>
-      <div class="item">
-        <!-- <span class="type">(pinboard - </span> -->
-        <span class="date">(Aug 26 2019) - </span>
-        <span class="link"><a href="https://news.ycombinator.com/item?id&#x3D;20643052">The Lonely Work of Moderating Hacker News | Hacker News</a></span>
-      </div>
-        <span class="comment">Good article and discussion on how Hackernews is moderated and why it&#x27;s participants are generally happy with the site. </span>
-      <div class="item">
-        <!-- <span class="type">(pinboard - </span> -->
-        <span class="date">(Aug 26 2019) - </span>
-        <span class="link"><a href="https://viewsourcecode.org/why/">_why&#x27;s Estate</a></span>
-      </div>
-      <div class="item">
-        <!-- <span class="type">(pinboard - </span> -->
-        <span class="date">(Aug 26 2019) - </span>
-        <span class="link"><a href="https://elliott.computer/exploring-the-vastness-of-a-website/">Exploring the vastness of a website — Elliott&#x27;s Computer</a></span>
-      </div>
-        <span class="comment">Great post on the value of &#x27;random&#x27; or &#x27;explore&#x27; sections of websites, rather than recommendations. </span>
-      <div class="item">
-        <!-- <span class="type">(pinboard - </span> -->
-        <span class="date">(Aug 26 2019) - </span>
-        <span class="link"><a href="https://news.ycombinator.com/item?id&#x3D;20068269">Confessions of a Reddit Karma Whore | Hacker News</a></span>
-      </div>
-      <div class="item">
-        <!-- <span class="type">(pinboard - </span> -->
-        <span class="date">(Aug 26 2019) - </span>
-        <span class="link"><a href="https://news.ycombinator.com/item?id&#x3D;20023209">Ask HN: What are your other favorite communities other than Hacker News? | Hacker News</a></span>
-      </div>
-        <span class="comment">An example of community cross pollination at work. Good example of community overlap.</span>
-      <div class="item">
-        <!-- <span class="type">(pinboard - </span> -->
-        <span class="date">(Aug 26 2019) - </span>
-        <span class="link"><a href="https://news.ycombinator.com/item?id&#x3D;20264911">Ask HN: What do you do with your Raspberry Pi? | Hacker News</a></span>
-      </div>
-        <span class="comment">Some cool inspirational uses of home computing.</span>
-      <div class="item">
-        <!-- <span class="type">(pinboard - </span> -->
-        <span class="date">(Aug 21 2019) - </span>
-        <span class="link"><a href="https://howistart.org/">How I Start</a></span>
-      </div>
-        <span class="comment">Awesome intros to different programming languages and how experienced folks in that language get started.</span>
-      <div class="item">
-        <!-- <span class="type">(pinboard - </span> -->
-        <span class="date">(Aug 21 2019) - </span>
-        <span class="link"><a href="https://personalsit.es/">Personal sites are awesome</a></span>
-      </div>
-        <span class="comment">Fun, open source, list of personal websites.</span>
-      <div class="item">
-        <!-- <span class="type">(pinboard - </span> -->
-        <span class="date">(Aug 21 2019) - </span>
-        <span class="link"><a href="https://madeddu.xyz/posts/im-still-learning/">The Good Employee</a></span>
-      </div>
-        <span class="comment">A modern company viewed with graph theory, with some humor.</span>
-      <div class="item">
-        <!-- <span class="type">(pinboard - </span> -->
-        <span class="date">(Aug 21 2019) - </span>
-        <span class="link"><a href="http://astronaut.io/">Astronaut.io</a></span>
-      </div>
-        <span class="comment">Gorgeous site that provides a bit of perspective about us.</span>
-      <div class="item">
-        <!-- <span class="type">(blog - </span> -->
-        <span class="date">(Aug 14 2019) - </span>
-        <span class="link"><a href="http://blog.seans.pub/aspects-of-main-street/">Aspects of Main Street</a></span>
-      </div>
-        <span class="comment">A short series of observations about the local main street.</span>
-      <div class="item">
-        <!-- <span class="type">(blog - </span> -->
-        <span class="date">(Jun 11 2019) - </span>
-        <span class="link"><a href="http://blog.seans.pub/the-premise-of-civic-decentralization/">The Premise of Technography</a></span>
-      </div>
-      <div class="item">
-        <!-- <span class="type">(blog - </span> -->
-        <span class="date">(Mar 11 2019) - </span>
-        <span class="link"><a href="http://blog.seans.pub/clay-shirky-on-building-social-software/">Clay Shirky on building social software</a></span>
-      </div>
-      <div class="item">
-        <!-- <span class="type">(blog - </span> -->
-        <span class="date">(Dec 11 2018) - </span>
-        <span class="link"><a href="http://blog.seans.pub/imzy-closing/">Imzy Closing</a></span>
-      </div>
-        <span class="comment">Some quick thoughts on the closing of Imzy.</span>
-      <div class="item">
-        <!-- <span class="type">(blog - </span> -->
-        <span class="date">(Nov 29 2018) - </span>
-        <span class="link"><a href="http://blog.seans.pub/modern-witchcraft/">Modern Witchcraft</a></span>
-      </div>
-  </section>
-
   <!-- <section id="writing">
     <h3>Writing from <a href="https://blog.seans.pub/">The Technographer</a></h3>
     11 Mar 2019 - <a href="#">Clay Shirky on Building Social Software</a><br>
@@ -218,7 +212,7 @@
 
   <section id="contact">
     <h3>Contact Me</h3>
-    <p>Still working out a good way of doing this.</p>
+    <p>I really enjoy hearing from people, so feel free to email me at seanjcrl at that popular google mail service .com. I'm not always the quickest to reply, but I'll do my best to get back to you!
   </section>
 
 </body>

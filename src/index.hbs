@@ -29,6 +29,16 @@
 
     .item {
       font-size: small;
+      margin-bottom: 0.6em;
+      padding-left: 4px;
+    }
+    .item:nth-child(odd) {
+      background-color: #f0f0f0;
+    }
+    .item a {
+      font-weight: bold;
+      font-size: 15px;
+      text-decoration-line: none;
     }
 
     .comment {
@@ -41,58 +51,68 @@
         padding: 2em;
       }
     }
+
+    table {
+      width: 100%;
+      text-align: center;
+    }
+    th, td {
+      padding-left: 4px;
+      padding-right: 4px;
+      padding-top: 4px;
+    }
   </style>
 </head>
 <body>
 
   <header>
     <h1>Sean's . Pub</h1>
-    <nav> <!-- This Site -->
-      <a href="/">Home</a>
-      | 
-      <a href="#activity">Activity</a>  
-      | 
-      <a href="#projects">Projects</a>
-      | 
-      <a href="#contact">Contact</a>
-    </nav>
-    <div> <!-- Other Sites --> 
-      <a href="https://pinboard.in/u:seanclynch/">Pinboard</a>
-      | 
-      <a href="http://github.com/seanclynch">Github</a>
-      | 
-      <a href="https://www.linkedin.com/in/sean-lynch-45898688">Linkedin</a>  
-      | 
-      <a href="https://twitter.com/greenitalics">Twitter</a>
-    </div>
-    <div> <!-- Selfhosted Sites -->
-      <a href="https://blog.seans.pub/">Blog</a>
-      |  
-      <a href="https://cloud.seans.pub/">Cloud</a>
-      | 
-      <a href="https://wiki.seans.pub/">Wiki</a>
-    </div>
+    <table>
+      <tr>
+        <th>This Site</th>
+        <th>My Sites</th>
+        <th>Other Sites</th>
+      </tr>
+      <tr>
+        <td><a href="/">Home</a></td>
+        <td><a href="https://blog.seans.pub/">Blog</a></td>
+        <td><a href="https://pinboard.in/u:seanclynch/">Pinboard</a></td>
+      </tr>
+      <tr>
+        <td><a href="#activity">Activity</a></td>
+        <td><a href="https://cloud.seans.pub/">Cloud</a></td>
+        <td><a href="http://github.com/seanclynch">Github</a></td>
+      </tr>
+      <tr>
+        <td><a href="#projects">Projects</a></td>
+        <td><a href="https://wiki.seans.pub/">Wiki</a></td>
+        <td><a href="https://www.linkedin.com/in/sean-lynch-45898688">Linkedin</a></td>
+      </tr>
+      <tr>
+        <td><a href="#contact">Contact</a></td>
+        <td>
+        <td><a href="https://twitter.com/greenitalics">Twitter</a></td>
+      </tr>
+    </table>
   </header>
-
-  <section id="intro">
-    <h3>Hey! Welcome!</h3>
-    <p>Sean is a software developer and <abbr title="one who builds and studies novel digital communities">technographer</abbr> from Philly. He specializes in building web applications and evaluating digital communities. For fun he plays many different types of games and likes to be outside with friends. This website is his home on the web, where he serves up great links and aggregates his digital life.</p>
-  </section>
 
   <section id="activity">
     <h3>Recent Activity</h3>
     {{#each items}}
       <div class="item">
-        <!-- <span class="type">({{source}} - </span> -->
-        <span class="date">({{nicedate datetime}}) - </span>
         <span class="link"><a href="{{url}}">{{title}}</a></span>
-      </div>
+        <span class="date">on {{source}} {{nicedate datetime}}</span>
       {{#if comment}}
-        <span class="comment">{{comment}}</span>
+        <div class="comment">{{comment}}</div>
       {{/if}}
+      </div>
     {{/each}}
   </section>
 
+  <section id="intro">
+    <h3>Hey! Welcome!</h3>
+    <p>Sean is a software developer and <abbr title="one who builds and studies novel digital communities">technographer</abbr> from Philly. He specializes in building web applications and evaluating digital communities. For fun he plays many different types of games and likes to be outside with friends. This website is his home on the web, where he serves up great links and aggregates his digital life.</p>
+  </section>
   <!-- <section id="writing">
     <h3>Writing from <a href="https://blog.seans.pub/">The Technographer</a></h3>
     11 Mar 2019 - <a href="#">Clay Shirky on Building Social Software</a><br>
