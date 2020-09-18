@@ -30,7 +30,7 @@ module.exports.fetch = async () => {
 
 			formatted_items.push({
 				url: 'http://blog.seans.pub' + post.url,
-				title: post.title,
+				title: "Wrote: " + post.title,
 				comment: post.custom_excerpt,
 				tags: tag_list,
 				datetime: post.published_at,

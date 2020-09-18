@@ -20,7 +20,7 @@ module.exports.fetch = async () => {
 			
 			formatted_items.push({
 				url: post.href,
-				title: post.description,
+				title: "Bookmarked: " + post.description,
 				comment: post.extended,
 				tags: tags,
 				datetime: post.time,

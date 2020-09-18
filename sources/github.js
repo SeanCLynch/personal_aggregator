@@ -45,8 +45,8 @@ module.exports.fetch = async () => {
         seen_repos.push(repo_name);
 
         // check for commit comment.
-        let has_commit = typeof event.commits != 'undefined';
-				let comment = (has_commit) ? event.commits[0].message : "";
+        let has_commit = typeof event.payload.commits != 'undefined';
+				let comment = (has_commit) ? event.payload.commits[0].message : "";
 
 				formatted_items.push({
           url: "https://github.com/" + event.repo.name,

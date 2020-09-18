@@ -9,14 +9,15 @@
   <style>
     html, body {
       font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      color: #555;
+      color: #AAAAAA;
       margin: 0 auto;
       max-width: 50em;
       line-height: 1.5em;
+      background-color: #373737;
     }
 
     h1, h2, strong {
-      color: #333;
+      color: #AAAAAA;
     }
 
     a {
@@ -31,24 +32,26 @@
       font-size: small;
       margin-bottom: 0.6em;
       padding-left: 4px;
-    }
-    .item:nth-child(odd) {
-      background-color: #f0f0f0;
+      line-height: 16px;
     }
     .item a {
       font-weight: bold;
       font-size: 15px;
       text-decoration-line: none;
     }
-
+    .date {
+      margin-left: 2em;
+      margin-top: 0.25em;
+    }
     .comment {
       font-size: small;
       margin-left: 2em;
+      margin-top: 0.25em;
     }
 
     @media (max-width: 480px) {
       body {
-        padding: 2em;
+        padding: 1em;
       }
     }
 
@@ -100,8 +103,8 @@
     <h3>Recent Activity</h3>
     {{#each items}}
       <div class="item">
-        <span class="link"><a href="{{url}}">{{title}}</a></span>
-        <span class="date">on {{source}} {{nicedate datetime}}</span>
+        <div class="link"><a href="{{url}}">{{title}}</a></div>
+        <div class="date">on {{source}} {{nicedate datetime}}</div>
       {{#if comment}}
         <div class="comment">{{comment}}</div>
       {{/if}}
@@ -125,15 +128,17 @@
   </section> -->
 
   <section id="projects">
-    <h3>Projects</h3>
+    <h3>Active Projects</h3>
     <a href="https://blog.seans.pub/">The Technographer</a> - My blog.<br>
     <a href="https://checklisting.club/">Checklisting.Club</a> - Collaborative preparedness SaaS.<br>
     <a href="https://the.vfanews.club/">The VFA News Club</a> - Clone of lobste.rs for VFA.<br>
+    <a href="https://projects.seans.pub/minecraft-custom-json/">Minecraft Custom JSON Generator</a> - Custom world generator for Minecraft.<br>
     <a href="https://github.com/CodeForPhilly/laddr-python">Laddr-Python</a> - Beginner-friendly clone of laddr.<br>
+    <a href="http://greenitalics.deviantart.com/">Cartography</a> - My own drawings and maps.<br>
+    <h3>Past Projects</h3>
     <a href="http://pennappsfellows.com/">PennApps Fellows</a> - Summer internship program in Philly.<br>
     <a href="http://devpost.com/software/pillpal-n2kxgo">PillPal</a> - Pill dispenser, 3rd place at PennApps XIII.<br>
     <a href="https://github.com/SeanCLynch/better_swipe_access">Better Swipe Access</a> - A card swipe access system for machine shops.<br>
-    <a href="http://greenitalics.deviantart.com/">Cartography</a> - My own drawings and maps.<br>
     <a href="https://www.dropbox.com/s/c6kbas5n8l2roq2/Sean%20Lynch%20Senior%20Thesis%20Draft.pdf?dl=0">Senior Thesis</a> - On detecting novel communities.<br>
     <a href="https://www.dpvcc.org/">DVPCC</a> - Private community for cancer researchers.<br>
     <!-- TEMPLATE <a href="#">Laddr</a><br> -->

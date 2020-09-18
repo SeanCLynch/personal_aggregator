@@ -9,14 +9,15 @@
   <style>
     html, body {
       font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      color: #555;
+      color: #AAAAAA;
       margin: 0 auto;
       max-width: 50em;
       line-height: 1.5em;
+      background-color: #373737;
     }
 
     h1, h2, strong {
-      color: #333;
+      color: #AAAAAA;
     }
 
     a {
@@ -31,24 +32,26 @@
       font-size: small;
       margin-bottom: 0.6em;
       padding-left: 4px;
-    }
-    .item:nth-child(odd) {
-      background-color: #f0f0f0;
+      line-height: 16px;
     }
     .item a {
       font-weight: bold;
       font-size: 15px;
       text-decoration-line: none;
     }
-
+    .date {
+      margin-left: 2em;
+      margin-top: 0.25em;
+    }
     .comment {
       font-size: small;
       margin-left: 2em;
+      margin-top: 0.25em;
     }
 
     @media (max-width: 480px) {
       body {
-        padding: 2em;
+        padding: 1em;
       }
     }
 
@@ -99,52 +102,54 @@
   <section id="activity">
     <h3>Recent Activity</h3>
       <div class="item">
-        <span class="link"><a href="https://github.com/SeanCLynch/minecraft-custom-json">Pushed to: SeanCLynch/minecraft-custom-json</a></span>
-        <span class="date">on github Sep 16 2020</span>
+        <div class="link"><a href="https://github.com/SeanCLynch/minecraft-custom-json">Pushed to: SeanCLynch/minecraft-custom-json</a></div>
+        <div class="date">on github Sep 16 2020</div>
+        <div class="comment">cleanup and add proof of concept</div>
       </div>
       <div class="item">
-        <span class="link"><a href="https://github.com/SeanCLynch/clcl">Pushed to: SeanCLynch/clcl</a></span>
-        <span class="date">on github Sep 16 2020</span>
+        <div class="link"><a href="https://github.com/SeanCLynch/clcl">Pushed to: SeanCLynch/clcl</a></div>
+        <div class="date">on github Sep 16 2020</div>
+        <div class="comment">added support forms</div>
       </div>
       <div class="item">
-        <span class="link"><a href="https://www.youtube.com/watch?v&#x3D;gYxUnkG8Sic">Aziz Ansari Clears Up the Pizza Swastika Story | Netflix Is A Joke - YouTube</a></span>
-        <span class="date">on pinboard Sep 03 2020</span>
+        <div class="link"><a href="https://www.youtube.com/watch?v&#x3D;gYxUnkG8Sic">Bookmarked: Aziz Ansari Clears Up the Pizza Swastika Story | Netflix Is A Joke - YouTube</a></div>
+        <div class="date">on pinboard Sep 03 2020</div>
       </div>
       <div class="item">
-        <span class="link"><a href="https://dungeonscrawl.com/">Dungeon Scrawl</a></span>
-        <span class="date">on pinboard Jul 30 2020</span>
+        <div class="link"><a href="https://dungeonscrawl.com/">Bookmarked: Dungeon Scrawl</a></div>
+        <div class="date">on pinboard Jul 30 2020</div>
       </div>
       <div class="item">
-        <span class="link"><a href="https://3dforreddit.com/r/pics">3D For Reddit</a></span>
-        <span class="date">on pinboard May 26 2020</span>
+        <div class="link"><a href="https://3dforreddit.com/r/pics">Bookmarked: 3D For Reddit</a></div>
+        <div class="date">on pinboard May 26 2020</div>
         <div class="comment">Freaking lovely virtual &#x27;museum&#x27; for reddit. WASD to move, mouse to look.</div>
       </div>
       <div class="item">
-        <span class="link"><a href="https://news.ycombinator.com/item?id&#x3D;21243283">Social Networks That Failed | Hacker News</a></span>
-        <span class="date">on pinboard May 26 2020</span>
+        <div class="link"><a href="https://news.ycombinator.com/item?id&#x3D;21243283">Bookmarked: Social Networks That Failed | Hacker News</a></div>
+        <div class="date">on pinboard May 26 2020</div>
         <div class="comment">Interesting list and discussion around various failed social networks.</div>
       </div>
       <div class="item">
-        <span class="link"><a href="http://blog.seans.pub/pubski-2/">Hubski? Pubski: Part 2 - Network</a></span>
-        <span class="date">on blog Apr 14 2020</span>
+        <div class="link"><a href="http://blog.seans.pub/pubski-2/">Wrote: Hubski? Pubski: Part 2 - Network</a></div>
+        <div class="date">on blog Apr 14 2020</div>
       </div>
       <div class="item">
-        <span class="link"><a href="http://blog.seans.pub/pubski-1/">Hubski? Pubski! Part 1 - Adventure</a></span>
-        <span class="date">on blog Apr 13 2020</span>
+        <div class="link"><a href="http://blog.seans.pub/pubski-1/">Wrote: Hubski? Pubski! Part 1 - Adventure</a></div>
+        <div class="date">on blog Apr 13 2020</div>
       </div>
       <div class="item">
-        <span class="link"><a href="http://blog.seans.pub/siege-mansion/">Dwarf Fortress: Siegemansion</a></span>
-        <span class="date">on blog Apr 02 2020</span>
+        <div class="link"><a href="http://blog.seans.pub/siege-mansion/">Wrote: Dwarf Fortress: Siegemansion</a></div>
+        <div class="date">on blog Apr 02 2020</div>
         <div class="comment">Experimental post about my latest adventures in Dwarf Fortress.</div>
       </div>
       <div class="item">
-        <span class="link"><a href="http://blog.seans.pub/aspects-of-main-street/">Aspects of Main Street</a></span>
-        <span class="date">on blog Aug 14 2019</span>
+        <div class="link"><a href="http://blog.seans.pub/aspects-of-main-street/">Wrote: Aspects of Main Street</a></div>
+        <div class="date">on blog Aug 14 2019</div>
         <div class="comment">A short series of observations about the local main street.</div>
       </div>
       <div class="item">
-        <span class="link"><a href="http://blog.seans.pub/the-premise-of-civic-decentralization/">The Premise of Technography</a></span>
-        <span class="date">on blog Jun 11 2019</span>
+        <div class="link"><a href="http://blog.seans.pub/the-premise-of-civic-decentralization/">Wrote: The Premise of Technography</a></div>
+        <div class="date">on blog Jun 11 2019</div>
       </div>
   </section>
 
@@ -164,15 +169,17 @@
   </section> -->
 
   <section id="projects">
-    <h3>Projects</h3>
+    <h3>Active Projects</h3>
     <a href="https://blog.seans.pub/">The Technographer</a> - My blog.<br>
     <a href="https://checklisting.club/">Checklisting.Club</a> - Collaborative preparedness SaaS.<br>
     <a href="https://the.vfanews.club/">The VFA News Club</a> - Clone of lobste.rs for VFA.<br>
+    <a href="https://projects.seans.pub/minecraft-custom-json/">Minecraft Custom JSON Generator</a> - Custom world generator for Minecraft.<br>
     <a href="https://github.com/CodeForPhilly/laddr-python">Laddr-Python</a> - Beginner-friendly clone of laddr.<br>
+    <a href="http://greenitalics.deviantart.com/">Cartography</a> - My own drawings and maps.<br>
+    <h3>Past Projects</h3>
     <a href="http://pennappsfellows.com/">PennApps Fellows</a> - Summer internship program in Philly.<br>
     <a href="http://devpost.com/software/pillpal-n2kxgo">PillPal</a> - Pill dispenser, 3rd place at PennApps XIII.<br>
     <a href="https://github.com/SeanCLynch/better_swipe_access">Better Swipe Access</a> - A card swipe access system for machine shops.<br>
-    <a href="http://greenitalics.deviantart.com/">Cartography</a> - My own drawings and maps.<br>
     <a href="https://www.dropbox.com/s/c6kbas5n8l2roq2/Sean%20Lynch%20Senior%20Thesis%20Draft.pdf?dl=0">Senior Thesis</a> - On detecting novel communities.<br>
     <a href="https://www.dpvcc.org/">DVPCC</a> - Private community for cancer researchers.<br>
     <!-- TEMPLATE <a href="#">Laddr</a><br> -->
