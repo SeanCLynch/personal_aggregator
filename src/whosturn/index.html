@@ -1,0 +1,68 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+
+      <title>&#9829;</title>
+
+      <style>
+      body {
+          margin: 0;
+      }
+      .holder {
+          position: absolute;
+          display: flex;
+          flex-flow: column nowrap;
+          width: 100%;
+          height: 100%;
+      }
+
+      .toggle {
+          flex: 1 1 auto;
+          background-color: lavender;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 2vw;
+      }
+
+      .sean {
+          background-color: lightgreen;
+      }
+      </style>
+  </head>
+
+  <body>
+    <div class="holder">
+      <div class="toggle">Eating Out</div>
+      <div class="toggle">Groceries</div>
+      <div class="toggle">Gas</div>
+    </div>
+
+    <script>
+      let toggles = document.querySelectorAll('.toggle');
+
+      toggles.forEach(function (t, idx) {
+        t.addEventListener('click', function (e) {
+          if (e.target.classList.contains('sean')) {
+            localStorage.setItem(`toggle${idx}`, 0);
+          } else {
+            localStorage.setItem(`toggle${idx}`, 1);
+          }
+          e.target.classList.toggle('sean');
+        });
+      });
+
+      window.onload = function () {
+          let eating = Number(localStorage.getItem('toggle0'));
+          if (eating) toggles[0].classList.add('sean');
+          let groceries = Number(localStorage.getItem('toggle1'));
+          if (groceries) toggles[1].classList.add('sean');
+          let gas = Number(localStorage.getItem('toggle2'));
+          if (gas) toggles[2].classList.add('sean');
+      }
+    </script>
+
+  </body>
+</html>

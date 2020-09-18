@@ -56,6 +56,10 @@ async function buildSite() {
   let compiled = handlebars.compile(template);
   let html = compiled(data);
   fs.writeFileSync('./dest/index.html', html);
+
+  // subpages
+  // fs.mkdirSync('./dest/whosturn');
+  fs.copyFileSync('./src/whosturn/index.html', './dest/whosturn/index.html');
 }
 
 let args = process.argv.slice(2);
