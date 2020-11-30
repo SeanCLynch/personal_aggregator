@@ -45,7 +45,14 @@ async function fetchData() {
 
 	archiveData();
 
-	let data = { 'items': arr };
+  let personal_values = ['Gratitude', 'Optimism', 'Creativity', 'Kindness', 'Community', 'Exploration', 'Balance', 'Leadership', 'Growth', 'Empathy', 'Wonder', 'Reflection'];
+  let dayOfYear = moment().dayOfYear();
+  let value_index = dayOfYear % 13;
+
+	let data = { 
+    'items': arr,
+    'pvalue': personal_values[value_index]
+  };
 	saveData(data);
 }
 
