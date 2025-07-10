@@ -56,7 +56,7 @@
     /* Header styling */
     .header {
       text-align: center;
-      margin-bottom: 30px;
+      /* margin-bottom: 30px; */
       border: 4px ridge var(--primary-color);
       padding: 20px;
       /* background: var(--dark-accent);
@@ -108,7 +108,7 @@
     .content {
       display: flex;
       flex-direction: column;
-      gap: 30px;
+      gap: 20px;
     }
     
     /* Nav menu */
@@ -116,7 +116,7 @@
       /* background: var(--dark-accent); */
       border: 4px ridge var(--primary-color);
       padding: 15px;
-      margin-bottom: 20px;
+      margin-top: 20px;
     }
     
     .nav-menu h2 {
@@ -194,6 +194,7 @@
       flex-grow: 1;
       font-size: 0.9rem;
       margin-bottom: 15px;
+      text-align: center;
     }
     
     .site-cta {
@@ -202,11 +203,12 @@
     }
     
     .site-cta a {
-      display: inline-block;
+      display: inline-flex;
       padding: 5px 15px;
       background: var(--background-color);
       border: 2px outset var(--primary-color);
       color: var(--primary-text);
+      gap: 5px;
     }
     
     .site-cta a:hover {
@@ -375,7 +377,7 @@
     .footer {
       text-align: center;
       margin-top: 30px;
-      padding: 20px;
+      padding: 20px 0px;
       font-size: 0.8rem;
       border-top: 2px solid var(--medium-wood);
     }
@@ -466,199 +468,169 @@
     <header class="header">
       <h1>Sean's Pub</h1>
       <span class="established">Est. 2015</span>
-      <p>Let's build community, together<span class="blink">_</span></p>
-      <div class="counter">
-        <!-- You are patron #<span class="counter-text">1,337</span> to visit our establishment -->
+      <!-- <p>Let's build community, together<span class="blink">_</span></p> -->
+      <!-- <div class="counter">
+        You are patron #<span class="counter-text">1,337</span> to visit our establishment
         Welcome to my cyber establishment!
-      </div>
+      </div> -->
     </header>
     
-    <!-- Marquee -->
+    <!-- Decorative Marquee -->
     <div class="marquee-container">
       <div class="marquee">
-        Welcome to Sean's Pub! PULL UP A CHAIR, CLICK A LINK AND STAY AWHILE! TODAY'S SPECIAL: FRESH CODE WITH A SIDE OF SEAN RAMBLING.
+        Welcome to Sean's "pub" and personal website!
+        <!-- Welcome to Sean's Pub!    Pull up a chair, click a link and stay a while!    TODAY'S SPECIAL: Fresh code with a side of rambling. -->
       </div>
     </div>
     
     <!-- Nav Menu -->
-    <nav class="nav-menu">
-      <h2>Pub Navigation Board</h2>
-      <div class="nav-links">
-        <a href="https://seans.pub/">HOME</a>
-        <a href="https://blog.seans.pub/">BLOG</a>
-        <a href="https://family.seans.pub/">FAMILY</a>
-        <!-- <a href="#about">ABOUT</a>
-        <a href="#stories">STORIES</a>
-        <a href="#guestbook">GUESTBOOK</a>
-        <a href="mailto:barkeep@digitaltavern.com">CONTACT</a> -->
-      </div>
-    </nav>
+
     
     <!-- Main Content -->
     <main class="content">
+      <div class="nav-menu">
+        <h2>Public Rooms</h2>
+      </div>
+
       <!-- Dashboard Grid -->
       <div class="dashboard">
         <div class="site-card">
           <div class="site-card-inner">
-            <h3>The Writing Desk</h3>
-            <div class="site-icon">📝</div>
+            <h3>The Writing Room</h3>
             <div class="site-desc">
-              Musings and essays made by candlelight. My writings about community and life.
-            </div>
+              My musings about community and life.
+            </div> 
             <div class="site-cta">
-              <a href="https://blog.seans.pub/">Visit My Blog</a>
+              <a href="https://blog.seans.pub/">Visit My Blog <i data-feather="rss"></i></a>
             </div>
           </div>
         </div>
         
         <div class="site-card">
           <div class="site-card-inner">
-            <h3>The Workshop</h3>
-            <div class="site-icon">🔨</div>
-            <i data-feather="circle"></i>
+            <h3>The Code Workshop</h3>
             <div class="site-desc">
-              Craftworks and code projects. Hand-carved digital artifacts made with thought and fingers.
+              Hand-coded, half-finished projects.
             </div>
             <div class="site-cta">
-              <a href="http://github.com/seanclynch">Visit My Github</a>
+              <a href="https://github.com/seanclynch">Visit My Github <i data-feather="github"></i></a>
             </div>
           </div>
         </div>
         
-        <!-- <div class="site-card">
-          <div class="site-card-inner">
-            <h3>The Gallery</h3>
-            <div class="site-icon">🖼️</div>
-            <div class="site-desc">
-              Visual collections from journeys near and far. A glimpse through the tavern windows.
-            </div>
-            <div class="site-cta">
-              <a href="/gallery">VIEW GALLERY</a>
-            </div>
-          </div>
-        </div> -->
-        
-        <!-- <div class="site-card">
-          <div class="site-card-inner">
-            <h3>The Music Corner</h3>
-            <div class="site-icon">🎵</div>
-            <div class="site-desc">
-              Tunes that keep the tavern lively. From old folk songs to modern melodies that stir the soul.
-            </div>
-            <div class="site-cta">
-              <a href="/music">LISTEN IN</a>
-            </div>
-          </div>
-        </div> -->
-        
         <div class="site-card">
           <div class="site-card-inner">
-            <h3>The Bookshelf</h3>
-            <div class="site-icon">🔗</div>
+            <h3>The Link-Shelf</h3>
             <div class="site-desc">
-              Hyperlinks across the digital realm. 
+              Peruse my collection of hyperlinks.
             </div>
             <div class="site-cta">
-              <a href="https://pinboard.in/u:seanclynch/">Visit My Pinboard</a>
+              <a href="https://pinboard.in/u:seanclynch/">Visit My Pinboard <i data-feather="link"></i></a>
             </div>
           </div>
         </div>
 
         <div class="site-card">
           <div class="site-card-inner">
-            <h3>The Back Office</h3>
-            <div class="site-icon">🔗</div>
+            <h3>The Office</h3>
             <div class="site-desc">
-              Keeping business organized and running smoothly.
+              For proffessional matters.
             </div>
             <div class="site-cta">
-              <a href="https://www.linkedin.com/in/sean-lynch-45898688">Visit My LinkedIn</a>
+              <a href="https://www.linkedin.com/in/sean-lynch-45898688">Visit My LinkedIn <i data-feather="linkedin"></i></a>
             </div>
           </div>
         </div>
-        
-        <!-- <div class="site-card">
+
+        <div class="site-card">
           <div class="site-card-inner">
-            <h3>The Cellar</h3>
-            <div class="site-icon">🍷</div>
+            <h3>The Gallery</h3>
             <div class="site-desc">
-              Archived treasures and aged content. The older vintage, sometimes more refined with time.
+              Art has it's place too.
             </div>
             <div class="site-cta">
-              <a href="/archives">EXPLORE CELLAR</a>
+              <a href="https://greenitalics.deviantart.com/">Visit My DeviantArt <i data-feather="image"></i></a>
             </div>
           </div>
-        </div> -->
+        </div>
+
+      </div>
+
+      <nav class="nav-menu">
+        <h2>Private Rooms</h2>
+      </nav>
+
+      <div class="dashboard">
+        <div class="site-card">
+          <div class="site-card-inner">
+            <h3>The Photo Archive</h3>  
+            <div class="site-desc">
+              Visual collections from journeys near and far.
+            </div>
+            <div class="site-desc">
+              Under construction!
+            </div>
+            <div class="site-cta">
+              <a href="#" style="pointer-events: none;">Visit My Immich Cloud <i data-feather="cloud-lightning"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="site-card">
+          <div class="site-card-inner">
+            <h3>The Family Den</h3>
+            <div class="site-desc">
+              View our family tree.
+            </div>
+            <div class="site-cta">
+              <a href="https://family.seans.pub/">Visit My Family's Gramps <i data-feather="heart"></i></a>
+            </div>
+          </div>
+        </div>
       </div>
       
       <!-- About Section -->
       <section id="about" class="about">
         <h2>About The Barkeep</h2>
-        <p><b>Welcome, weary traveler!</b> I too, have long surfed the web, accumulating all kinds of experiences. Until one day I decided to open this digital tavern, a place to share my wares with the world.</p>
+        <p><b>Welcome, weary traveler!</b> Sean is a software engineer from Philly. He plays many different kinds of games, and explores the outdoors often. He hopes that technology can empower us to make the world better.</p>
+        <br />
+        <p>He tries to be a good friend, family member and citizen. He is an alumni of the University of Pennsylvania. A fellow of Venture for America. An eagle scout. A volunteer with Code for Philly. And a co-founder of PennApps Fellowship Program. Among other things... </p>
         <br />
         <p>This humble establishment serves as the heart of my digital domain - a central gathering place for all my projects and creations. Please browse and make yourself comfortable!</p>
       </section>
-      
-      <!-- Stories Section -->
-      <!-- <section id="stories" class="stories">
-        <h2>Tavern Tales from the Technographer</h2>
-        <div class="story-container">
-          <div class="story-card">
-            <p>"I remember discovering this site back in '97. The digital fireplace was always lit, and the code was always fresh. Through dial-up connections and broadband advancements, this tavern has remained a constant in an ever-changing web."</p>
-            <span class="author">— Old_Timer, Patron since 1997</span>
-          </div>
-          <div class="story-card">
-            <p>"During the great server crash of '03, when digital darkness swept across the domain, the barkeep maintained this place with nothing but static HTML and sheer determination. Those were the days when website maintenance meant something."</p>
-            <span class="author">— WebCrawler, Digital Historian</span>
-          </div>
-          <div class="story-card">
-            <p>"I've downloaded code from The Workshop that still runs on my systems today. Efficient, elegant, and built to last—like the finest wooden furniture crafted by a master."</p>
-            <span class="author">— CodeCrafter, Regular Visitor</span>
-          </div>
-          <div class="story-card">
-            <p>"The Cellar archives helped me rediscover projects I thought were lost to time. It's like finding a dusty bottle of perfectly aged content that gets better with each revisit."</p>
-            <span class="author">— DigitalArchaeologist, Explorer</span>
+
+      <div class="dashboard">
+        <div class="site-card">
+          <div class="site-card-inner">
+            <h3>WRTL</h3>  
+            <div class="site-desc">
+              Experimental digital community.
+            </div>
+            <div class="site-cta">
+              <a href="#">Visit WRTL</a>
+            </div>
           </div>
         </div>
-      </section> -->
-      
-      <!-- Guestbook -->
-      <!-- <section id="guestbook" class="guestbook">
-        <h2>Sign The Guestbook</h2>
-        <div class="guestbook-entries">
-          <div class="guestbook-entry">
-            <span class="name">WoodworkerDev:</span> This design brings warmth to the digital space. Like sitting by a fireplace with good code. (03/01/2025)
-          </div>
-          <div class="guestbook-entry">
-            <span class="name">VintageWebmaster:</span> The tavern aesthetic mixed with retro web design is brilliant! Added you to my bookmarks. (02/27/2025)
-          </div>
-          <div class="guestbook-entry">
-            <span class="name">DigitalCraftsman:</span> Your Workshop section inspired me to refinish my own codebase. Thanks for the motivation! (02/23/2025)
-          </div>
-          <div class="guestbook-entry">
-            <span class="name">NostalgiaSeeker:</span> Found this place while searching for web 1.0 aesthetics. Stayed for the warm atmosphere and rich content. (02/18/2025)
+
+        <div class="site-card">
+          <div class="site-card-inner">
+            <h3>The Commons</h3>
+            <div class="site-desc">
+              Experimental social initiative.
+            </div>
+            <div class="site-cta">
+              <a href="https://thecommons.party">Visit The Commons</a>
+            </div>
           </div>
         </div>
-        
-        <form class="guestbook-form">
-          <label for="name">Your Name:</label>
-          <input type="text" id="name" name="name">
-          
-          <label for="email">Correspondence:</label>
-          <input type="email" id="email" name="email">
-          
-          <label for="message">Your Tale:</label>
-          <textarea id="message" name="message" rows="3"></textarea>
-          
-          <button type="submit">SIGN THE BOOK</button>
-        </form>
-      </section> -->
+      </div>
+      
     </main>
-    
+
     <!-- Footer -->
     <footer class="footer">
       <p>© 2015-2025 Sean - All Rights Reserved</p>
-      <p>~ Best enjoyed with a warm beverage and a curious mind ~</p>
+      <p>~ Best enjoyed with a warm beverage and curious mind ~</p>
       <!-- <div>
         <img src="/api/placeholder/88/31" alt="Handcrafted HTML">
         <img src="/api/placeholder/88/31" alt="Made with Care">
@@ -670,5 +642,8 @@
       </p>
     </footer>
   </div>
+  <script>
+    feather.replace();
+  </script>
 </body>
 </html>
