@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sean's Pub - Portfolio & Dashboard</title>
+  <!-- <script src="https://unpkg.com/feather-icons"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <style>
+    /* Pub-inspired color scheme */
+    :root {
+      --dark-wood: #33231D;
+      --medium-wood: #8B5A2B;
+      --light-wood: #D2B48C;
+      --cream: #F5F5DC;
+      --dark-accent: #2A1506;
+      --primary-color: #8BBA94;
+      --primary-text: #AAAAAA;
+      --background-color: #373737;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+        background-color: var(--background-color);
+      /* background-color: var(--dark-wood);
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%238B5A2B' fill-opacity='0.2' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 5v1H5V0zm1 5v1H5L0 1V0h1l5 5z'/%3E%3C/g%3E%3C/svg%3E"); */
+      color: var(--primary-text);
+      font-family: 'Georgia', serif;
+      line-height: 1.6;
+      padding: 0;
+      margin: 0;
+    }
+    
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    
+    a:hover {
+      color: var(--light-wood);
+      text-decoration: underline;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    /* Header styling */
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+      border: 4px ridge var(--primary-color);
+      padding: 20px;
+      /* background: var(--dark-accent);
+      background-image: linear-gradient(to right, var(--dark-accent), var(--dark-wood)); */
+    }
+    
+    .header h1 {
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      letter-spacing: 3px;
+    }
+    
+    .header p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+    
+    .established {
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--primary-color);
+      display: block;
+      margin-top: -5px;
+    }
+    
+    .counter {
+      margin: 15px 0;
+      font-size: 0.8rem;
+    }
+    
+    .counter-text {
+      background-color: var(--dark-accent);
+      border: 2px inset var(--medium-wood);
+      padding: 5px 10px;
+    }
+    
+    .blink {
+      animation: blinker 1s linear infinite;
+    }
+    
+    @keyframes blinker {
+      50% {
+        opacity: 0;
+      }
+    }
+    
+    /* Main content */
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    
+    /* Nav menu */
+    .nav-menu {
+      /* background: var(--dark-accent); */
+      border: 4px ridge var(--primary-color);
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    
+    .nav-menu h2 {
+      color: var(--primary-text);
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 10px;
+    }
+    
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    
+    .nav-links a {
+      padding: 5px 15px;
+      background: var(--dark-wood);
+      border: 2px outset var(--medium-wood);
+      color: var(--primary-text);
+    }
+    
+    .nav-links a:hover {
+      border-style: inset;
+      text-decoration: none;
+      background: var(--medium-wood);
+    }
+    
+    /* Dashboard grid */
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    
+    .site-card {
+      background: var(--dark-accent);
+      border: 4px ridge var(--medium-wood);
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .site-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .site-card h3 {
+      color: var(--light-wood);
+      text-align: center;
+      margin-bottom: 10px;
+      border-bottom: 2px solid var(--medium-wood);
+      padding-bottom: 5px;
+    }
+    
+    .site-card-inner {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .site-icon {
+      text-align: center;
+      margin: 10px 0;
+      font-size: 2rem;
+    }
+    
+    .site-desc {
+      flex-grow: 1;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+    
+    .site-cta {
+      text-align: center;
+      margin-top: auto;
+    }
+    
+    .site-cta a {
+      display: inline-block;
+      padding: 5px 15px;
+      background: var(--background-color);
+      border: 2px outset var(--primary-color);
+      color: var(--primary-text);
+    }
+    
+    .site-cta a:hover {
+      border: 2px inset var(--primary-text);
+      text-decoration: none;
+      color: var(--primary-color);
+    }
+    
+    /* About section */
+    .about {
+      border: 4px ridge var(--primary-color);
+      padding: 20px;
+      margin-top: 30px;
+    }
+    
+    .about h2 {
+      color: var(--primary-text);
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 10px;
+    }
+    
+    .visitor-info {
+      background: var(--dark-wood);
+      border: 2px inset var(--medium-wood);
+      padding: 10px;
+      margin-top: 20px;
+    }
+    
+    .visitor-info p {
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+    
+    /* Stories Section */
+    .stories {
+      background: var(--dark-accent);
+      border: 4px ridge var(--medium-wood);
+      padding: 20px;
+      margin-top: 30px;
+    }
+    
+    .stories h2 {
+      color: var(--light-wood);
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      border-bottom: 2px solid var(--medium-wood);
+      padding-bottom: 10px;
+    }
+    
+    .story-container {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      padding: 1rem 0;
+      scrollbar-width: thin;
+      scrollbar-color: var(--medium-wood) var(--dark-accent);
+    }
+    
+    .story-container::-webkit-scrollbar {
+      height: 8px;
+    }
+    
+    .story-container::-webkit-scrollbar-track {
+      background: var(--dark-accent);
+    }
+    
+    .story-container::-webkit-scrollbar-thumb {
+      background-color: var(--medium-wood);
+      border-radius: 10px;
+    }
+    
+    .story-card {
+      flex: 0 0 300px;
+      background: var(--dark-wood);
+      padding: 1rem;
+      border-radius: 0;
+      border-left: 4px solid var(--medium-wood);
+    }
+    
+    .story-card p {
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    
+    .story-card .author {
+      color: var(--light-wood);
+      font-weight: bold;
+    }
+    
+    /* Guestbook */
+    .guestbook {
+      background: var(--dark-accent);
+      border: 4px ridge var(--medium-wood);
+      padding: 20px;
+      margin-top: 30px;
+    }
+    
+    .guestbook h2 {
+      color: var(--light-wood);
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      border-bottom: 2px solid var(--medium-wood);
+      padding-bottom: 10px;
+    }
+    
+    .guestbook-entries {
+      background: var(--dark-wood);
+      border: 2px inset var(--medium-wood);
+      padding: 10px;
+      height: 150px;
+      overflow-y: auto;
+      margin-bottom: 15px;
+    }
+    
+    .guestbook-entry {
+      border-bottom: 1px dashed var(--medium-wood);
+      padding: 5px 0;
+    }
+    
+    .guestbook-entry .name {
+      color: var(--light-wood);
+    }
+    
+    .guestbook-form {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px;
+      align-items: center;
+    }
+    
+    .guestbook-form label {
+      font-weight: bold;
+    }
+    
+    .guestbook-form input, .guestbook-form textarea {
+      background: var(--dark-wood);
+      border: 2px inset var(--medium-wood);
+      padding: 5px;
+      color: var(--cream);
+      font-family: 'Georgia', serif;
+    }
+    
+    .guestbook-form button {
+      grid-column: span 2;
+      background: var(--dark-wood);
+      border: 2px outset var(--medium-wood);
+      padding: 5px 15px;
+      color: var(--cream);
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    
+    .guestbook-form button:hover {
+      border-style: inset;
+      background: var(--medium-wood);
+    }
+    
+    /* Footer */
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      padding: 20px;
+      font-size: 0.8rem;
+      border-top: 2px solid var(--medium-wood);
+    }
+    
+    .footer p {
+      margin-bottom: 10px;
+    }
+    
+    .footer img {
+      margin: 10px;
+      height: 31px;
+    }
+    
+    /* Marquee */
+    .marquee-container {
+      background: var(--dark-accent);
+      border: 4px ridge var(--medium-wood);
+      padding: 5px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+    
+    .marquee {
+      white-space: nowrap;
+      animation: marquee 20s linear infinite;
+    }
+    
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    
+    /* Decorative elements */
+    .divider {
+      position: relative;
+      height: 20px;
+      margin: 15px 0;
+      overflow: hidden;
+    }
+    
+    .divider::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 20px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 20'%3E%3Cpath d='M0,0 C250,40 750,40 1000,0 L1000,20 L0,20 Z' fill='%238B5A2B'/%3E%3C/svg%3E") no-repeat;
+      background-size: cover;
+    }
+    
+    /* Responsive */
+    @media (max-width: 600px) {
+      .header h1 {
+        font-size: 1.8rem;
+      }
+      
+      .dashboard {
+        grid-template-columns: 1fr;
+      }
+      
+      .guestbook-form {
+        grid-template-columns: 1fr;
+      }
+      
+      .guestbook-form button {
+        grid-column: 1;
+      }
+      
+      .story-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .story-card {
+        flex: none;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1>Sean's Pub</h1>
+      <span class="established">Est. 2015</span>
+      <p>Let's build community, together<span class="blink">_</span></p>
+      <div class="counter">
+        <!-- You are patron #<span class="counter-text">1,337</span> to visit our establishment -->
+        Welcome to my cyber establishment!
+      </div>
+    </header>
+    
+    <!-- Marquee -->
+    <div class="marquee-container">
+      <div class="marquee">
+        Welcome to Sean's Pub! PULL UP A CHAIR, CLICK A LINK AND STAY AWHILE! TODAY'S SPECIAL: FRESH CODE WITH A SIDE OF SEAN RAMBLING.
+      </div>
+    </div>
+    
+    <!-- Nav Menu -->
+    <nav class="nav-menu">
+      <h2>Pub Navigation Board</h2>
+      <div class="nav-links">
+        <a href="https://seans.pub/">HOME</a>
+        <a href="https://blog.seans.pub/">BLOG</a>
+        <a href="https://family.seans.pub/">FAMILY</a>
+        <!-- <a href="#about">ABOUT</a>
+        <a href="#stories">STORIES</a>
+        <a href="#guestbook">GUESTBOOK</a>
+        <a href="mailto:barkeep@digitaltavern.com">CONTACT</a> -->
+      </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="content">
+      <!-- Dashboard Grid -->
+      <div class="dashboard">
+        <div class="site-card">
+          <div class="site-card-inner">
+            <h3>The Writing Desk</h3>
+            <div class="site-icon">📝</div>
+            <div class="site-desc">
+              Musings and essays made by candlelight. My writings about community and life.
+            </div>
+            <div class="site-cta">
+              <a href="https://blog.seans.pub/">Visit My Blog</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="site-card">
+          <div class="site-card-inner">
+            <h3>The Workshop</h3>
+            <div class="site-icon">🔨</div>
+            <i data-feather="circle"></i>
+            <div class="site-desc">
+              Craftworks and code projects. Hand-carved digital artifacts made with thought and fingers.
+            </div>
+            <div class="site-cta">
+              <a href="http://github.com/seanclynch">Visit My Github</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- <div class="site-card">
+          <div class="site-card-inner">
+            <h3>The Gallery</h3>
+            <div class="site-icon">🖼️</div>
+            <div class="site-desc">
+              Visual collections from journeys near and far. A glimpse through the tavern windows.
+            </div>
+            <div class="site-cta">
+              <a href="/gallery">VIEW GALLERY</a>
+            </div>
+          </div>
+        </div> -->
+        
+        <!-- <div class="site-card">
+          <div class="site-card-inner">
+            <h3>The Music Corner</h3>
+            <div class="site-icon">🎵</div>
+            <div class="site-desc">
+              Tunes that keep the tavern lively. From old folk songs to modern melodies that stir the soul.
+            </div>
+            <div class="site-cta">
+              <a href="/music">LISTEN IN</a>
+            </div>
+          </div>
+        </div> -->
+        
+        <div class="site-card">
+          <div class="site-card-inner">
+            <h3>The Bookshelf</h3>
+            <div class="site-icon">🔗</div>
+            <div class="site-desc">
+              Hyperlinks across the digital realm. 
+            </div>
+            <div class="site-cta">
+              <a href="https://pinboard.in/u:seanclynch/">Visit My Pinboard</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="site-card">
+          <div class="site-card-inner">
+            <h3>The Back Office</h3>
+            <div class="site-icon">🔗</div>
+            <div class="site-desc">
+              Keeping business organized and running smoothly.
+            </div>
+            <div class="site-cta">
+              <a href="https://www.linkedin.com/in/sean-lynch-45898688">Visit My LinkedIn</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- <div class="site-card">
+          <div class="site-card-inner">
+            <h3>The Cellar</h3>
+            <div class="site-icon">🍷</div>
+            <div class="site-desc">
+              Archived treasures and aged content. The older vintage, sometimes more refined with time.
+            </div>
+            <div class="site-cta">
+              <a href="/archives">EXPLORE CELLAR</a>
+            </div>
+          </div>
+        </div> -->
+      </div>
+      
+      <!-- About Section -->
+      <section id="about" class="about">
+        <h2>About The Barkeep</h2>
+        <p><b>Welcome, weary traveler!</b> I too, have long surfed the web, accumulating all kinds of experiences. Until one day I decided to open this digital tavern, a place to share my wares with the world.</p>
+        <br />
+        <p>This humble establishment serves as the heart of my digital domain - a central gathering place for all my projects and creations. Please browse and make yourself comfortable!</p>
+      </section>
+      
+      <!-- Stories Section -->
+      <!-- <section id="stories" class="stories">
+        <h2>Tavern Tales from the Technographer</h2>
+        <div class="story-container">
+          <div class="story-card">
+            <p>"I remember discovering this site back in '97. The digital fireplace was always lit, and the code was always fresh. Through dial-up connections and broadband advancements, this tavern has remained a constant in an ever-changing web."</p>
+            <span class="author">— Old_Timer, Patron since 1997</span>
+          </div>
+          <div class="story-card">
+            <p>"During the great server crash of '03, when digital darkness swept across the domain, the barkeep maintained this place with nothing but static HTML and sheer determination. Those were the days when website maintenance meant something."</p>
+            <span class="author">— WebCrawler, Digital Historian</span>
+          </div>
+          <div class="story-card">
+            <p>"I've downloaded code from The Workshop that still runs on my systems today. Efficient, elegant, and built to last—like the finest wooden furniture crafted by a master."</p>
+            <span class="author">— CodeCrafter, Regular Visitor</span>
+          </div>
+          <div class="story-card">
+            <p>"The Cellar archives helped me rediscover projects I thought were lost to time. It's like finding a dusty bottle of perfectly aged content that gets better with each revisit."</p>
+            <span class="author">— DigitalArchaeologist, Explorer</span>
+          </div>
+        </div>
+      </section> -->
+      
+      <!-- Guestbook -->
+      <!-- <section id="guestbook" class="guestbook">
+        <h2>Sign The Guestbook</h2>
+        <div class="guestbook-entries">
+          <div class="guestbook-entry">
+            <span class="name">WoodworkerDev:</span> This design brings warmth to the digital space. Like sitting by a fireplace with good code. (03/01/2025)
+          </div>
+          <div class="guestbook-entry">
+            <span class="name">VintageWebmaster:</span> The tavern aesthetic mixed with retro web design is brilliant! Added you to my bookmarks. (02/27/2025)
+          </div>
+          <div class="guestbook-entry">
+            <span class="name">DigitalCraftsman:</span> Your Workshop section inspired me to refinish my own codebase. Thanks for the motivation! (02/23/2025)
+          </div>
+          <div class="guestbook-entry">
+            <span class="name">NostalgiaSeeker:</span> Found this place while searching for web 1.0 aesthetics. Stayed for the warm atmosphere and rich content. (02/18/2025)
+          </div>
+        </div>
+        
+        <form class="guestbook-form">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name">
+          
+          <label for="email">Correspondence:</label>
+          <input type="email" id="email" name="email">
+          
+          <label for="message">Your Tale:</label>
+          <textarea id="message" name="message" rows="3"></textarea>
+          
+          <button type="submit">SIGN THE BOOK</button>
+        </form>
+      </section> -->
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2015-2025 Sean - All Rights Reserved</p>
+      <p>~ Best enjoyed with a warm beverage and a curious mind ~</p>
+      <!-- <div>
+        <img src="/api/placeholder/88/31" alt="Handcrafted HTML">
+        <img src="/api/placeholder/88/31" alt="Made with Care">
+        <img src="/api/placeholder/88/31" alt="Digital Craftsman Guild Member">
+      </div> -->
+      <p>
+        <a href="mailto:bouncer@seans.pub">bouncer@seans.pub</a> | 
+        Last Renovated: 03/05/2025
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
